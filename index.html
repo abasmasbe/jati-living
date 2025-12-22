@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@200;300;400;700&display=swap" rel="stylesheet">
+
+
+
+<title>Jati Living - Jepara</title>
+
+<style>
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#f5f5f5;color:#333}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+
+header{
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:#fff5e6;
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+  
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* header{
+  background:url('img/p52.jpeg') center/cover no-repeat;
+  color:#fff5e6;
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+} */
+ 
+
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(139,94,60,.75);
+}
+
+header h1,header p{
+  position:relative;
+  z-index:1;
+  font-family:'Playfair Display',serif;
+  animation:fadeInUp 1s forwards;
+  opacity:0;
+}
+header h1{font-size:clamp(2.5rem,5vw,3rem)}
+header p{font-size:clamp(.9rem,2vw,1.2rem);margin-top:5px}
+
+@keyframes fadeInUp{
+  to{opacity:1;transform:translateY(0)}
+}
+
+.floating-wa {
+  position: fixed;
+  bottom: 20px;       /* jarak dari bawah */
+  left: 20px;         /* jarak dari kiri */
+  background: #25D366;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background 0.3s, transform 0.2s;
+  opacity: 0.8;
+}
+
+.floating-wa:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.kontak-kami{
+  background: rgba(139,94,60,0.1); /* transparan ringan */
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.kontak-kami p {
+  font-family: 'Martian Mono', monospace; 
+  font-size: .8em;
+
+
+}
+
+.pilihanwarna{
+
+  
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 300;
+  font-size:1em;
+}
+
+/* Grid dasar (desktop) */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 15px; */
+  padding: 5px;
+}
+
+/* Kotak produk */
+.product {
+  /* flex: 1 1 250px; */
+  flex: 0 0 48%;
+  max-width: 300px; 
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.product:hover {
+  transform: translateY(-3px);
+}
+
+/* Gambar di dalam kotak */
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+
+  font-size: 1rem; /* ukuran judul produk */
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.product .price {
+    font-family: 'Martian Mono', monospace;
+  font-weight: 400; /* gunakan 400 atau 700 sesuai kebutuhan */
+
+  font-size: .65rem; /* ukuran harga */
+  color: #8b5e3c;   /* warna sama */
+}
+
+
+
+/* MODAL */
+.modal{
+  z-index: 1000;
+  display:none;
+  position:fixed;
+  pointer-events: auto;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:1000;
+}
+.modal-content{
+  z-index: 1010;
+    max-height: 90vh;
+    overflow-y: auto;
+  background:#fff;
+  margin:5% auto;
+  padding:5px;
+  width:90%;
+  pointer-events: auto;
+  max-width:800px;
+  border-radius:10px;
+  text-align:center;
+  position:relative;
+  transform:scale(.85);
+  animation:scaleIn .3s forwards;
+}
+
+/* PRODUCT INFO */
+.product-info{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:10px;
+}
+.product-info p{
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 200;
+  font-size:0.95em;
+  color:#444;
+}
+
+/* modal title modaltitle*/ 
+#modalTitle {
+  font-size: 1.5rem; /* ukuran default desktop */
+  margin: 10px 0 5px;
+  font-family: 'Playfair Display', serif;
+}
+/* modalprice modal price */
+#modalPrice {
+  
+    font-family: 'Martian Mono', monospace;
+  font-weight: 400; /* gunakan 400 atau 700 sesuai kebutuhan */
+
+  font-size: 1rem; /* ukuran default desktop */
+  color: #8b5e3c;
+  font-weight: bold;
+  margin: 5px 0 15px;
+}
+
+
+@keyframes scaleIn{
+  to{transform:scale(1)}
+}
+
+/* CLOSE BUTTON */
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  z-index:20; /* pastikan selalu di atas gambar */
+  font-size:26px;
+  background:rgba(0,0,0,.2);
+  color:#fff;
+  padding:2px 8px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.close:hover {
+  background: rgba(0, 0, 0, 0.5); /* lebih gelap/terang sesuai selera */
+  /* transform: scale(1.1);    */
+  transition: background 0.3s, transform 0.2s;
+}
+
+
+
+.watermark {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* color: rgba(255,255,255,0.5); transparan */
+  color: rgba(0,0,0, alpha);
+  font-size: 3vw;
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+  pointer-events: none;   /* supaya watermark tidak mengganggu klik */
+  user-select: none;      /* tidak bisa diseleksi */
+  letter-spacing: 20px;
+  opacity: .80;
+}
+
+.main-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* height: 400px; tetap, agar gambar muncul */
+}
+
+
+
+.main-img {
+  width: 100%;
+  height: auto;              /* ⬅️ tinggi mengikuti gambar */
+  /* max-height: 70vh; */
+            /* ⬅️ aman di hp */
+  object-fit: cover;       /* ⬅️ TIDAK TERPOTONG */
+  display: block;
+  margin: auto;
+  border-radius: 6px;
+  transition: opacity 0.35s ease-in-out;
+  top: 0;
+  left: 0;
+}
+
+
+
+.main-img.fade-out {
+  opacity: 0;
+}
+
+
+.img-active{
+  transform:translateX(0);
+}
+
+/* THUMBNAILS */
+.thumbnails{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin:10px 0;
+}
+.thumbnails img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:5px;
+  cursor:pointer;
+  opacity:.6;
+  border:2px solid transparent;
+  transition:.2s;
+}
+.thumbnails img.active{
+  opacity:1;
+  border-color:#8b5e3c;
+}
+
+/* INDICATOR DOT */
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin:8px 0;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ccc;
+}
+.dot.active{
+  background:#8b5e3c;
+}
+
+
+.product-image{
+  position:relative;
+  overflow:hidden;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ⬅️ PALING PENTING */
+}
+
+.product-image img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:opacity .4s ease;
+}
+
+
+.product-image img.top{
+  opacity:1;
+  z-index:2;
+}
+
+.product-image img.bottom{
+  opacity:0;
+  z-index:1;
+}
+
+
+.product-colors {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.product-colors span{
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 200;
+  font-size:0.95em;
+}
+
+.color-sample {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.color-sample span {
+  position: absolute;
+  top: 30px; /* di bawah bulatan */
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.salak-bronze{background:#a0522d;}
+.natural{background:#deb887;}
+.black { background: #000; }
+
+
+
+
+
+
+
+.color-sample {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+
+
+/* Warna contoh */
+.salak-bronze { background-color: #a0522d; }
+.natural { background-color: #deb887; }
+
+
+
+/* TOMBOL WHATSAPP */
+.wa-product{
+  display:block;
+  margin-top:15px;
+  background:#25D366;
+  color:#fff;
+  padding:12px;
+  border-radius:30px;
+  font-weight:bold;
+}
+.wa-product:hover{background:#1ebe5d}
+
+/* FOOTER */
+footer{
+  background:#8b5e3c;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  margin-top:20px;
+}
+
+
+/* Media query untuk iPhone 13 dan layar kecil (≤400px) */
+
+/* HP header statis */
+
+@media(max-width: 600px){
+
+  
+.pilihanwarna{
+
+  
+  font-size:.65em;
+}
+
+/* modal */
+
+/* modal title modaltitle*/
+#modalTitle {
+  font-size: 1rem; /* ukuran default desktop */
+}
+/* modalprice modal price */
+#modalPrice {
+  font-size: .6rem; /* ukuran default desktop */
+}
+
+.product-info p{
+  font-size:0.65em;
+}
+
+/* color */
+.product-colors span{
+  font-size: .65em;
+}
+
+
+.color-sample {
+  width: 15px;
+  height: 15px;
+  /* border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer; */
+}
+
+
+  header{padding:30px 15px}
+
+    .product h3 {
+    font-size: 0.85rem;  /* lebih kecil di HP */
+  }
+  .product .price {
+    font-size: 0.55rem;   /* lebih kecil di HP */
+  }
+
+    
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* kotak mulai dari kiri */
+    gap: 0; /* hapus jarak antar kotak */
+    padding: 0;
+  }
+  .product {
+    flex: 0 0 45%; /* dua kotak per baris */
+    margin: 5px;     /* hapus margin agar rapat */
+  }
+
+  
+.kontak-kami{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.kontak-kami p {
+  font-size: .6em;
+
+
+}
+
+
+}
+
+
+.main-img:active{
+  transform:scale(1.15);
+}
+
+
+
+</style>
+</head>
+
+<body>
+    <!-- Tombol WhatsApp Mengambang -->
+<a href="https://wa.me/628532671311" target="_blank" class="floating-wa">
+    💬 Chat WA
+  </a>
+  
+
+  <header id="mainHeader">
+  <h1>Jati Living</h1>
+  <p>❁ Furniture Custom Jepara ❁</p>
+  <p>❁ Custom Your Furniture With Us ❁</p>
+  <p>❁ Forhome | Resto | Villa ❁</p>
+</header>
+
+
+<section class="products">
+<!-- p1 -->
+  <div class="product"
+       data-title="Alder Cabinet"
+       data-price="Rp 5000"
+       data-images="img/alder-cabinet-1.JPG,img/alder-cabinet-2.JPG"
+     data-colors="salak-bronze:Salak Bronze"
+
+       onclick="openProduct(this)">
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Alder Cabinet</h3>
+    <p class="price">Rp 5000</p>
+  </div>
+<!-- p2 -->
+  <div class="product"
+       data-title="Loiss Sofa"
+       data-price="Rp -"
+       data-images="img/loiss-sofa-1.jpg,img/loiss-sofa-2.jpg,img/loiss-sofa-3.jpg"
+       onclick="openProduct(this)">
+    
+       
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Loiss Sofa</h3>
+    <p class="price">Rp -</p>
+  </div>
+<!-- p3 -->
+  <div class="product"
+       data-title="Bed Frame 4 Drawer"
+       data-price="Rp -"
+       data-images="img/bed-frame-4drawer-1.JPG,img/bed-frame-4drawer-2.JPG"
+       onclick="openProduct(this)">
+    
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Bed Frame 4 Drawer</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+<!-- p4 -->
+ <div class="product"
+     data-title="Kura Cabinet"
+     data-price="Rp -"
+     data-images="img/kura-cabinet-1.JPG,img/kura-cabinet-2.JPG"
+     data-colors="natural:Natural,salak-bronze:Salak Bronze"
+     onclick="openProduct(this)">
+  <div class="product-image">
+    <img class="top">
+    <img class="bottom">
+  </div>
+
+  <h3>Kura Cabinet</h3>
+  <p class="price">Rp -</p>
+</div>
+
+<!-- p5 -->
+  <div class="product"
+       data-title="Mini Cabinet"
+       data-price="Rp -"
+       data-images="img/mini-cabinet-1.JPG,img/mini-cabinet-2.JPG,img/mini-cabinet-3.JPG"
+       onclick="openProduct(this)">
+    
+       
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Mini Cabinet</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+<!-- p6 -->
+  <div class="product"
+       data-title="Gruvy Chair"
+       data-price="Rp -"
+       data-images="img/gruvy-chair-1.JPG,img/gruvy-chair-2.JPG"
+       onclick="openProduct(this)">
+    
+       
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Gruvy Chair</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+<!-- p7 -->
+  <div class="product"
+       data-title="Sila Bar Stools"
+       data-price="Rp -"
+       data-images="img/sila-bar-stools-1.JPG,img/sila-bar-stools-2.JPG,img/sila-bar-stools-3.JPG"
+       onclick="openProduct(this)">
+    
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Sila Bar Stools</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+<!-- p8 -->
+  <div class="product"
+       data-title="Chaise Arm Chair"
+       data-price="Rp -"
+       data-images="img/chaise-arm-chair-1.JPG,img/chaise-arm-chair-2.JPG"
+       onclick="openProduct(this)">
+    
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Chaise Arm Chair</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+<!-- p9 -->
+  <div class="product"
+       data-title="Maciza Bed Frame"
+       data-price="Rp -"
+       data-images="img/maciza-bed-frame-1.JPG,img/maciza-bed-frame-2.JPG"
+       onclick="openProduct(this)">
+    
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Maciza Bed Frame</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+<!-- p10 -->
+  <div class="product"
+       data-title="Sillas Chair"
+       data-price="Rp -"
+       data-images="img/sillas-chair-1.JPG,img/sillas-chair-2.JPG"
+       onclick="openProduct(this)">
+    
+       
+       <div class="product-image">
+  <img class="top">
+  <img class="bottom">
+</div>
+
+    <h3>Sillas Chair</h3>
+    <p class="price">Rp -</p>
+  </div>
+
+</section>
+
+
+
+
+<!-- MODAL -->
+
+
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('productModal')">&times;</span>
+
+    <div class="main-img-wrapper">
+  <img id="modalMainImg" class="main-img">
+  <div class="watermark">Jati Living</div>
+</div>
+
+    <div class="main-img-wrapper">
+      <img id="modalMainImg" class="main-img">
+    </div>
+
+
+    <div id="modalThumbs" class="thumbnails"></div>
+
+    <h3 id="modalTitle"></h3>
+
+    <div class="product-info">
+      <p>Bahan Baku: Kayu Jati Solid</p>
+      <p>Set Produk: 6 Kursi + Meja</p>
+      <p id="modalPrice" class="price">
+        Rp. 1500
+      </p>
+    </div>
+
+    
+    <p class="pilihanwarna">Pilihan Warna Finishing:</p>
+
+    <!-- Pilihan Warna -->
+<div class="product-colors">
+  <div class="color-sample salak-bronze" title="Salak Bronze"></div>
+  <span>Salak Bronze</span>
+
+  <div class="color-sample natural" title="Natural"></div>
+  <span>Natural</span>
+</div>
+
+      
+      <a id="modalWA" class="wa-product" target="_blank">
+        💬 Pesan Via Whatsapp
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Kontak Kami -->
+<section class="kontak-kami">
+    <p>📞 Kontak Kami: 0877-6496-7645</p>
+      <p>✉️ Email: cholisnoor264@gmail.com</p>
+      <p>📍 Jl. Mantingan Ngebong, Rt.24 Rw.09 Kec.Tahunan Kab.Jepara</p>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jati Living - Jepara</p>
+  </footer>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const INTERVAL = 1000; // 1 detik
+  const FADE_TIME = 400;
+
+  document.querySelectorAll(".product").forEach(product => {
+    const images = product.dataset.images?.split(",").map(i => i.trim());
+    if (!images || images.length < 2) return;
+
+    const imgTop = product.querySelector(".top");
+    const imgBottom = product.querySelector(".bottom");
+    if (!imgTop || !imgBottom) return;
+
+    let index = 0;
+    let timer = null;
+    let isTopActive = true;
+
+    // set gambar utama
+    imgTop.src = images[0];
+    imgTop.style.opacity = 1;
+    imgBottom.style.opacity = 0;
+
+    function crossFadeTo(nextIndex){
+      const show = isTopActive ? imgBottom : imgTop;
+      const hide = isTopActive ? imgTop : imgBottom;
+
+      show.src = images[nextIndex];
+      show.style.opacity = 1;
+      hide.style.opacity = 0;
+
+      isTopActive = !isTopActive;
+    }
+
+    product.addEventListener("mouseenter", () => {
+      if (timer) return;
+
+      timer = setInterval(() => {
+        index = (index + 1) % images.length;
+        crossFadeTo(index);
+      }, INTERVAL);
+    });
+
+    product.addEventListener("mouseleave", () => {
+      clearInterval(timer);
+      timer = null;
+      index = 0;
+      isTopActive = true;
+
+      imgTop.src = images[0];
+      imgTop.style.opacity = 1;
+      imgBottom.style.opacity = 0;
+    });
+  });
+});
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("mainHeader");
+
+  // Ambil semua data-images dari setiap produk
+  const allImages = Array.from(document.querySelectorAll(".product"))
+    .map(product => product.dataset.images)       // ambil data-images
+    .filter(Boolean)                              // pastikan tidak kosong
+    .flatMap(images => images.split(",").map(i => i.trim())); // pecah menjadi array
+
+  if (allImages.length > 0) {
+    // Pilih random
+    const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+
+    // Set ke background header
+    header.style.backgroundImage = `url('${randomImage}')`;
+  }
+});
+
+
+
+function openProduct(el){
+  const title = el.dataset.title;
+  const price = el.dataset.price;
+  const images = el.dataset.images.split(',');
+  const colors = el.dataset.colors ? el.dataset.colors.split(',') : [];
+
+  // modal title dan price
+  document.getElementById('modalTitle').innerText = title;
+  document.getElementById('modalPrice').innerText = price;
+
+  // main image
+  const mainImg = document.getElementById('modalMainImg');
+  mainImg.src = images[0];
+
+  // thumbnails
+  const thumbs = document.getElementById('modalThumbs');
+  thumbs.innerHTML = '';
+  images.forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    if(i===0) img.classList.add('active');
+    img.onclick = () => changeImage(mainImg,img);
+    thumbs.appendChild(img);
+  });
+
+  // warna
+  const colorWrapper = document.querySelector('.product-colors');
+  colorWrapper.innerHTML = ''; // bersihkan dulu
+  colors.forEach(c=>{
+    const [cls, name] = c.split(':');
+    const div = document.createElement('div');
+    div.className = `color-sample ${cls}`;
+    div.title = name;
+    const span = document.createElement('span');
+    span.innerText = name;
+    colorWrapper.appendChild(div);
+    colorWrapper.appendChild(span);
+  });
+
+  // WA link
+  document.getElementById('modalWA').href = 
+    `https://wa.me/628532671311?text=Halo saya tertarik dengan produk ${title}`;
+
+  // buka modal
+  document.getElementById('productModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+
+
+function closeModal(id){
+  document.getElementById(id).style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function changeImage(mainImg, thumb){
+  mainImg.classList.add('fade-out');
+
+  setTimeout(()=>{
+    mainImg.src = thumb.src;
+    mainImg.classList.remove('fade-out');
+
+    document.querySelectorAll('#modalThumbs img')
+      .forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  },300);
+}
+
+
+
+
+function openModal(id){
+  const modal = document.getElementById(id);
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // disable scroll background
+}
+
+function closeModal(id){
+  const modal = document.getElementById(id);
+  modal.style.display = 'none';
+  document.body.style.overflow = ''; // enable scroll lagi
+}
+
+function changeImage(mainImg, thumb){
+  if(!mainImg || !thumb) return;
+
+  // fade out
+  mainImg.classList.add('fade-out');
+
+  setTimeout(()=>{
+    mainImg.src = thumb.src;
+
+    // fade in
+    mainImg.classList.remove('fade-out');
+
+    // active thumbnail
+    document
+      .querySelectorAll('#modalThumbs img')
+      .forEach(t => t.classList.remove('active'));
+
+    thumb.classList.add('active');
+  }, 250);
+}
+
+
+
+// function changeImage(mainId, thumb){
+//   const img = document.getElementById(mainId);
+
+//   // fade out
+//   img.classList.add('fade-out');
+
+//   setTimeout(() => {
+//     // ganti gambar
+//     img.src = thumb.src;
+
+//     // fade in
+//     img.classList.remove('fade-out');
+
+//     // update thumbnail aktif
+//     document.querySelectorAll('.thumbnails img').forEach(t => t.classList.remove('active'));
+//     thumb.classList.add('active');
+
+//     // update dot
+//     const index = thumb.dataset.index;
+//     document.querySelectorAll('.dots .dot').forEach(d => d.classList.remove('active'));
+//     document.querySelectorAll('.dots .dot')[index].classList.add('active');
+//   }, 350);
+// }
+
+
+let startX = 0;
+let endX = 0;
+
+const wrapper = document.querySelector('.main-img-wrapper');
+wrapper.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+wrapper.addEventListener('touchmove', e => {
+  endX = e.touches[0].clientX;
+});
+
+wrapper.addEventListener('touchend', e => {
+  const diff = endX - startX;
+  if(Math.abs(diff) > 50){ // threshold 50px
+    if(diff < 0){
+      // swipe kiri → next image
+      const nextThumb = wrapper.parentElement.querySelector('.thumbnails img.active')?.nextElementSibling;
+      if(nextThumb) changeImage('mainImg1', nextThumb);
+    } else {
+      // swipe kanan → prev image
+      const prevThumb = wrapper.parentElement.querySelector('.thumbnails img.active')?.previousElementSibling;
+      if(prevThumb) changeImage('mainImg1', prevThumb);
+    }
+  }
+});
+
+
+window.onclick=function(e){
+  document.querySelectorAll('.modal').forEach(m=>{
+    if(e.target===m)m.style.display='none'
+  })
+}
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.modal').forEach(modal=>{
+      if(modal.style.display === 'block'){
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // aktifkan scroll lagi
+      }
+    });
+  }
+});
+
+document.addEventListener('contextmenu', function(e){
+    if(e.target.tagName === 'IMG'){ 
+        e.preventDefault();
+    }
+});
+
+</script>
+
+</body>
+</html>
