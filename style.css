@@ -1,0 +1,511 @@
+/* ===============================
+   RESET & GLOBAL
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff5e6;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(139, 94, 60, 0.75);
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+  font-family: 'Playfair Display', serif;
+  animation: fadeInUp 1s forwards;
+  opacity: 0;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+}
+
+header p {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  margin-top: 5px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   FLOATING WHATSAPP
+================================ */
+.floating-wa {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background 0.3s, transform 0.2s;
+  opacity: 0.8;
+}
+
+.floating-wa:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* ===============================
+   KONTAK & PILIHAN WARNA
+================================ */
+.kontak-kami {
+  background: rgba(139, 94, 60, 0.1);
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.kontak-kami p {
+  font-family: 'Martian Mono', monospace;
+  font-size: 0.8em;
+}
+
+.pilihanwarna {
+  margin-top: 20px;
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+/* ===============================
+   GRID PRODUK & FILTER
+================================ */
+#productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+}
+
+.product {
+  flex: 0 0 48%;
+  max-width: 300px;
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-3px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.product .price {
+  font-family: 'Martian Mono', monospace;
+  font-weight: 400;
+  font-size: 0.65rem;
+  color: #8b5e3c;
+}
+
+/* FILTER PRODUK */
+.product-filters {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px 10px;
+}
+
+.product-filters button {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #8b5e3c;
+  background: #fff;
+  color: #8b5e3c;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.product-filters button.active,
+.product-filters button:hover {
+  background: #8b5e3c;
+  color: #fff;
+}
+
+/* ===============================
+   MODAL & PRODUCT INFO
+================================ */
+.modal {
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  pointer-events: auto;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  z-index: 1010;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  margin: 5% auto;
+  padding: 5px;
+  width: 90%;
+  pointer-events: auto;
+  max-width: 800px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  transform: scale(0.85);
+  animation: scaleIn 0.3s forwards;
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.product-info p {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 200;
+  font-size: 0.95em;
+  color: #444;
+}
+
+#modalTitle {
+  font-size: 1.5rem;
+  margin: 10px 0 5px;
+  font-family: 'Playfair Display', serif;
+}
+
+#modalPrice {
+  font-family: 'Martian Mono', monospace;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #8b5e3c;
+  margin: 5px 0 15px;
+}
+
+/* CLOSE BUTTON */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 20;
+  font-size: 26px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* ===============================
+   GAMBAR PRODUK, THUMBNAILS & DOT
+================================ */
+.main-img:active {
+  transform: scale(1.15);
+}
+
+.main-img,
+.product-image img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.main-img-wrapper {
+  position: relative;
+  width: 100%;
+  /* max-height: 65vh; */
+  overflow: hidden;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-img.fade-out {
+  opacity: 0;
+}
+
+.img-active {
+  transform: translateX(0);
+}
+
+/* THUMBNAILS */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.thumbnails img.active {
+  opacity: 1;
+  border-color: #8b5e3c;
+}
+
+/* DOT INDICATOR */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.dot.active {
+  background: #8b5e3c;
+}
+
+/* PRODUCT IMAGE */
+.product-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.product-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.product-image img.top {
+  opacity: 1;
+  z-index: 2;
+}
+
+.product-image img.bottom {
+  opacity: 0;
+  z-index: 1;
+}
+
+
+
+/* ===============================
+   WATERMARK
+================================ */
+.watermark {
+	font-weight: 700;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgba(0,0,0, alpha);
+	font-size: 3vw;
+	width: 100%;
+	font-family: 'Playfair Display', serif;
+	pointer-events: none;   /* supaya watermark tidak mengganggu klik */
+	user-select: none;      /* tidak bisa diseleksi */
+	letter-spacing: 20px;
+	opacity: .80;
+}
+
+.grid-watermark {
+	font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0,0,0,alpha); /* transparansi */
+  font-size: clamp(.6rem, 2vw, .8rem);
+  width: 100%;
+  text-align: center;
+	letter-spacing: .7em;
+  pointer-events: none;   /* tidak mengganggu klik */
+  user-select: none;      /* tidak bisa diseleksi */
+  opacity: 0.8;           /* transparansi */
+  z-index: 2;             /* di atas gambar */
+}
+
+
+
+/* ===============================
+   WARNA PRODUK & TOMBOL WHATSAPP
+================================ */
+.product-colors {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.product-colors span {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 200;
+  font-size: 0.95em;
+}
+
+.color-sample {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: relative;
+}
+
+.color-sample span {
+  position: absolute;
+  top: 30px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* COLOR EXAMPLES */
+.salak-bronze { background-color: #a0522d; }
+.natural { background-color: #deb887; }
+.black { background: #000; }
+
+/* TOMBOL WHATSAPP PRODUK */
+.wa-product {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.wa-product:hover {
+  background: #1ebe5d;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  background: #8b5e3c;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* ===============================
+   MEDIA QUERY UNTUK HP ≤600px
+================================ */
+@media (max-width: 600px) {
+  .pilihanwarna { font-size: 0.65em; }
+  #modalTitle { font-size: 1rem; }
+  #modalPrice { font-size: 0.6rem; }
+  .product-info p { font-size: 0.65em; }
+  .product-colors span { font-size: 0.65em; }
+  .color-sample { width: 15px; height: 15px; }
+  header { padding: 30px 15px; }
+  .product h3 { font-size: 0.85rem; }
+  .product .price { font-size: 0.55rem; }
+  .products { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; padding: 0; }
+  .product { flex: 0 0 45%; margin: 5px; }
+  .kontak-kami { padding-top: 20px; padding-left: 20px; padding-bottom: 20px; margin-top: 20px; }
+  .kontak-kami p { font-size: 0.6em; }
+}
