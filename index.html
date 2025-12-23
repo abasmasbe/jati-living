@@ -618,11 +618,20 @@ footer{
 /* ===============================
    HELPER
 ================================ */
+// function toThumb(src) {
+//   const file = src.split("/").pop();
+//   const name = file.replace(/\.[^/.]+$/, "");
+//   return `thumb/${name}-400.jpg`; // pakai folder thumb
+// }
+
 function toThumb(src) {
-  const file = src.split("/").pop();
-  const name = file.replace(/\.[^/.]+$/, "");
-  return `thumb/${name}-400.jpg`; // pakai folder thumb
+  const file = src.split("/").pop();          // ambil nama file lengkap
+  const dotIndex = file.lastIndexOf(".");     // cari posisi titik terakhir
+  const name = file.substring(0, dotIndex);   // ambil nama tanpa ekstensi
+  const ext = file.substring(dotIndex);       // ambil ekstensi asli (.JPG atau .jpg)
+  return `thumb/${name}-400${ext}`;           // gabungkan nama + suffix + ekstensi asli
 }
+
 
 /* ===============================
    PRODUCT DATA (REUSABLE)
