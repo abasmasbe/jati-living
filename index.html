@@ -105,6 +105,7 @@ header p{font-size:clamp(.9rem,2vw,1.2rem);margin-top:5px}
 
 .pilihanwarna{
 
+		margin-top: 20px;
 	
 	font-family: 'Lexend Deca', sans-serif;
 	font-weight: 300;
@@ -253,13 +254,11 @@ header p{font-size:clamp(.9rem,2vw,1.2rem);margin-top:5px}
 
 
 .watermark {
-	font-family: 'Bodoni Moda', serif;
 	font-weight: 700;
 	position: absolute;
 	top: 15%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/* color: rgba(255,255,255,0.5); transparan */
 	color: rgba(0,0,0, alpha);
 	font-size: 3vw;
 	width: 100%;
@@ -269,6 +268,25 @@ header p{font-size:clamp(.9rem,2vw,1.2rem);margin-top:5px}
 	letter-spacing: 20px;
 	opacity: .80;
 }
+
+.grid-watermark {
+	font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0,0,0,alpha); /* transparansi */
+  font-size: clamp(.6rem, 2vw, .8rem);
+  width: 100%;
+  text-align: center;
+	letter-spacing: .7em;
+  pointer-events: none;   /* tidak mengganggu klik */
+  user-select: none;      /* tidak bisa diseleksi */
+  opacity: 0.8;           /* transparansi */
+  z-index: 2;             /* di atas gambar */
+}
+
 
 
 .main-img, .product-image img {
@@ -566,515 +584,292 @@ footer{
 </header>
 
 
-<section class="products">
-<!-- p1 -->
-	<div class="product"
-			 data-title="Alder Cabinet"
-			 data-price="Rp 5000"
-			 data-images="img/alder-cabinet-1.JPG,img/alder-cabinet-2.JPG"
-		 data-colors="salak-bronze:Salak Bronze"
-
-			 onclick="openProduct(this)">
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Alder Cabinet</h3>
-		<p class="price">Rp 5000</p>
-	</div>
-<!-- p2 -->
-	<div class="product"
-			 data-title="Loiss Sofa"
-			 data-price="Rp -"
-			 data-images="img/loiss-sofa-1.JPG,img/loiss-sofa-2.JPG,img/loiss-sofa-3.JPG"
-			 onclick="openProduct(this)">
-		
-			 
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Loiss Sofa</h3>
-		<p class="price">Rp -</p>
-	</div>
-<!-- p3 -->
-	<div class="product"
-			 data-title="Bed Frame 4 Drawer"
-			 data-price="Rp -"
-			 data-images="img/bed-frame-4drawer-1.JPG,img/bed-frame-4drawer-2.JPG"
-			 onclick="openProduct(this)">
-		
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Bed Frame 4 Drawer</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p4 -->
- <div class="product"
-		 data-title="Kura Cabinet"
-		 data-price="Rp -"
-		 data-images="img/kura-cabinet-1.JPG,img/kura-cabinet-2.JPG"
-		 data-colors="natural:Natural,salak-bronze:Salak Bronze"
-		 onclick="openProduct(this)">
-	<div class="product-image">
-		<img class="top">
-		<img class="bottom">
-	</div>
-
-	<h3>Kura Cabinet</h3>
-	<p class="price">Rp -</p>
-</div>
-
-<!-- p5 -->
-	<div class="product"
-			 data-title="Mini Cabinet"
-			 data-price="Rp -"
-			 data-images="img/mini-cabinet-1.JPG,img/mini-cabinet-2.JPG,img/mini-cabinet-3.JPG"
-			 onclick="openProduct(this)">
-		
-			 
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Mini Cabinet</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p6 -->
-	<div class="product"
-			 data-title="Gruvy Chair"
-			 data-price="Rp -"
-			 data-images="img/gruvy-chair-1.JPG,img/gruvy-chair-2.JPG"
-			 onclick="openProduct(this)">
-		
-			 
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Gruvy Chair</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p7 -->
-	<div class="product"
-			 data-title="Sila Bar Stools"
-			 data-price="Rp -"
-			 data-images="img/sila-bar-stools-1.JPG,img/sila-bar-stools-2.JPG,img/sila-bar-stools-3.JPG"
-			 onclick="openProduct(this)">
-		
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Sila Bar Stools</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p8 -->
-	<div class="product"
-			 data-title="Chaise Arm Chair"
-			 data-price="Rp -"
-			 data-images="img/chaise-arm-chair-1.JPG,img/chaise-arm-chair-2.JPG"
-			 onclick="openProduct(this)">
-		
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Chaise Arm Chair</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p9 -->
-	<div class="product"
-			 data-title="Maciza Bed Frame"
-			 data-price="Rp -"
-			 data-images="img/maciza-bed-frame-1.JPG,img/maciza-bed-frame-2.JPG"
-			 onclick="openProduct(this)">
-		
-			 <div class="product-image">
-	<img class="top">
-	<img class="bottom">
-</div>
-
-		<h3>Maciza Bed Frame</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p10 -->
-	<div class="product"
-		data-title="Sillas Chair"
-		data-price="Rp -"
-		data-images="img/sillas-chair-1.JPG,img/sillas-chair-2.JPG"
-		onclick="openProduct(this)">
-	<div class="product-image">
-	<img class="top">
-	<img class="bottom">
-	</div>
-		<h3>Sillas Chair</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-<!-- p11 -->
-	<div class="product"
-		data-title="Wooden Door"
-		data-price="Rp -"
-		data-images="img/wooden-door-1.JPG,img/wooden-door-2.JPG"
-		onclick="openProduct(this)">
-	<div class="product-image">
-	<img class="top">
-	<img class="bottom">
-	</div>
-		<h3>Wooden Door</h3>
-		<p class="price">Rp -</p>
-	</div>
-
-
-</section>
-
-
-
+<section class="products" id="productGrid"></section>
 
 <!-- MODAL -->
-
-
 <div id="productModal" class="modal">
-	<div class="modal-content">
-		<span class="close" onclick="closeModal('productModal')">&times;</span>
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('productModal')">&times;</span>
 
-		<div class="main-img-wrapper">
-	<img id="modalMainImg" class="main-img">
-	<div class="watermark">Jati Living</div>
+    <div class="main-img-wrapper">
+      <img id="modalMainImg" class="main-img">
+      <div class="watermark">Jati Living</div>
+    </div>
+
+    <div id="modalThumbs" class="thumbnails"></div>
+
+    <h3 id="modalTitle"></h3>
+
+    <div class="product-info" id="modalSpecs"></div>
+
+    <p class="pilihanwarna">Pilihan Warna Finishing:</p>
+    <div class="product-colors" id="modalColors"></div>
+
+    <a id="modalWA" class="wa-product" target="_blank">
+      💬 Order Via Whatsapp
+    </a>
+  </div>
 </div>
-
-		<div class="main-img-wrapper">
-			<img id="modalMainImg" class="main-img">
-		</div>
-
-
-		<div id="modalThumbs" class="thumbnails"></div>
-
-		<h3 id="modalTitle"></h3>
-
-		<div class="product-info">
-			<p>Bahan Baku: Kayu Jati Solid</p>
-			<p>Set Produk: 6 Kursi + Meja</p>
-			<p id="modalPrice" class="price">
-				Rp. 1500
-			</p>
-		</div>
-
-		
-		<p class="pilihanwarna">Pilihan Warna Finishing:</p>
-
-		<!-- Pilihan Warna -->
-<div class="product-colors">
-	<div class="color-sample salak-bronze" title="Salak Bronze"></div>
-	<span>Salak Bronze</span>
-
-	<div class="color-sample natural" title="Natural"></div>
-	<span>Natural</span>
-</div>
-
-			
-			<a id="modalWA" class="wa-product" target="_blank">
-				💬 Pesan Via Whatsapp
-			</a>
-		</div>
-	</div>
-</div>
-
-
-
-
-<!-- Kontak Kami -->
-<section class="kontak-kami">
-		<p>📞 Kontak Kami: 0877-6496-7645</p>
-			<p>✉️ Email: cholisnoor264@gmail.com</p>
-			<p>📍 Jl. Mantingan Ngebong, Rt.24 Rw.09 Kec.Tahunan Kab.Jepara</p>
-	</section>
-	
-	<!-- Footer -->
-	<footer>
-		<p>&copy; 2025 Jati Living - Jepara</p>
-	</footer>
 
 
 
 
 <script>
+/* ===============================
+   HELPER
+================================ */
+function toThumb(src) {
+  const file = src.split("/").pop();
+  const name = file.replace(/\.[^/.]+$/, "");
+  return `thumb/${name}-400.jpg`; // pakai folder thumb
+}
+
+/* ===============================
+   PRODUCT DATA (REUSABLE)
+================================ */
+
+const PRODUCTS = [
+
+	// produk 1
+  {
+    id: "alder-cabinet",
+    title: "Alder Cabinet",
+    price: "Rp. 8.550.000",
+    images: [
+      "img/alder-cabinet-1.JPG",
+      "img/alder-cabinet-2.JPG"
+    ],
+    specs: [
+		// "Specification:",
+      "Solid Teak Wood, Rattan, Hardware Slow Motion",
+	  "Size: W 220 cm x D 55 cm x H 85 cm",
+	  "Pre Order",
+      "Note: Optional Colour",
+    ],
+    colors: [
+    //   { cls: "salak-bronze", name: "Salak Bronze" },
+    //   { cls: "natural", name: "Natural" }
+	{cls:"optional-colour", name:"Optional Colour"}
+    ]
+  },
+
+	// produk 2
+  {
+    id: "lois-sofa",
+    title: "Lois Sofa",
+    price: "Rp. 12.450.000",
+    images: [
+      "img/loiss-sofa-1.JPG",
+      "img/loiss-sofa-2.JPG",
+      "img/loiss-sofa-3.JPG"
+    ],
+    specs: [
+		// "Specification:",
+      "Solid Teak Wood, Fabric",
+	  "Size: W 300 cm x D 79 cm x H 96 cm",
+	  "Pre Order",
+      "Note: Optional Colour",
+    ],
+    colors: [
+    //   { cls: "salak-bronze", name: "Salak Bronze" },
+    //   { cls: "natural", name: "Natural" }
+	{cls:"optional-colour", name:"Optional Colour"}
+    ]
+  },
+  
+	// produk 3
+  {
+    id: "bed-frame-4-drawer",
+    title: "Bed Frame 4 Drawer",
+    price: "Rp. 6.850.000",
+    images: [
+      "img/bed-frame-4drawer-1.JPG",
+      "img/bed-frame-4drawer-2.JPG",
+    ],
+    specs: [
+		// "Specification:",
+      "Solid Teak Wood, Rattan, Hardware Pushopen",
+	  "Size: W 180 cm x D 200 cm",
+	  "Pre Order",
+      "Note: Optional Colour",
+    ],
+    colors: [
+    //   { cls: "salak-bronze", name: "Salak Bronze" },
+    //   { cls: "natural", name: "Natural" }
+	{cls:"optional-colour", name:"Optional Colour"}
+    ]
+  },
+
+];
+
+
+// 2️⃣ HEADER RANDOM IMAGE
 document.addEventListener("DOMContentLoaded", () => {
-	const INTERVAL = 1000; // 1 detik
-	const FADE_TIME = 400;
+  const header = document.getElementById("mainHeader");
+  if (!header) return;
 
-	document.querySelectorAll(".product").forEach(product => {
-		const images = product.dataset.images?.split(",").map(i => i.trim());
-		if (!images || images.length < 2) return;
+  const toThumb = (src) => {
+    const file = src.split("/").pop();
+    const name = file.replace(/\.[^/.]+$/, "");
+    return `thumb/${name}-400.jpg`;
+  };
 
-		const imgTop = product.querySelector(".top");
-		const imgBottom = product.querySelector(".bottom");
-		if (!imgTop || !imgBottom) return;
+  const allThumbs = PRODUCTS.map(p => p.images[0]).map(toThumb);
 
-		let index = 0;
-		let timer = null;
-		let isTopActive = true;
-
-		// set gambar utama
-		imgTop.src = images[0];
-		imgTop.style.opacity = 1;
-		imgBottom.style.opacity = 0;
-
-		function crossFadeTo(nextIndex){
-			const show = isTopActive ? imgBottom : imgTop;
-			const hide = isTopActive ? imgTop : imgBottom;
-
-			show.src = images[nextIndex];
-			show.style.opacity = 1;
-			hide.style.opacity = 0;
-
-			isTopActive = !isTopActive;
-		}
-
-		product.addEventListener("mouseenter", () => {
-			if (timer) return;
-
-			timer = setInterval(() => {
-				index = (index + 1) % images.length;
-				crossFadeTo(index);
-			}, INTERVAL);
-		});
-
-		product.addEventListener("mouseleave", () => {
-			clearInterval(timer);
-			timer = null;
-			index = 0;
-			isTopActive = true;
-
-			imgTop.src = images[0];
-			imgTop.style.opacity = 1;
-			imgBottom.style.opacity = 0;
-		});
-	});
+  if (allThumbs.length) {
+    const randomThumb = allThumbs[Math.floor(Math.random() * allThumbs.length)];
+    header.style.backgroundImage = `url('${randomThumb}')`;
+    header.style.backgroundSize = 'cover';
+    header.style.backgroundPosition = 'center';
+  }
 });
 
 
+/* ===============================
+   GRID GENERATOR
+================================ */
+const grid = document.getElementById("productGrid");
 
-	document.addEventListener("DOMContentLoaded", () => {
-	const header = document.getElementById("mainHeader");
+PRODUCTS.forEach(product => {
+  const div = document.createElement("div");
+  div.className = "product";
+  div.addEventListener("click", () => openProduct(product.id));
 
-	// Ambil semua data-images dari setiap produk
-	const allImages = Array.from(document.querySelectorAll(".product"))
-		.map(product => product.dataset.images)       // ambil data-images
-		.filter(Boolean)                              // pastikan tidak kosong
-		.flatMap(images => images.split(",").map(i => i.trim())); // pecah menjadi array
+  div.innerHTML = `
+    <div class="product-image">
+      <img class="top" src="${toThumb(product.images[0])}">
+      <span class="grid-watermark">Jati Living</span>
+    </div>
+    <h3>${product.title}</h3>
+    <p class="price">${product.price}</p>
+  `;
 
-	if (allImages.length > 0) {
-		// Pilih random
-		const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
-
-		// Set ke background header
-		header.style.backgroundImage = `url('${randomImage}')`;
-	}
+  grid.appendChild(div);
 });
 
+/* ===============================
+   MODAL
+================================ */
+function openProduct(id) {
+  const product = PRODUCTS.find(p => p.id === id);
+  if (!product) return;
 
+  const modal = document.getElementById("productModal");
+  const mainImg = document.getElementById("modalMainImg");
+  const thumbs = document.getElementById("modalThumbs");
 
-function openProduct(el){
-	const title = el.dataset.title;
-	const price = el.dataset.price;
-	const images = el.dataset.images.split(',');
-	const colors = el.dataset.colors ? el.dataset.colors.split(',') : [];
+  // main image (2K)
+  mainImg.src = product.images[0];
 
-	// modal title dan price
-	document.getElementById('modalTitle').innerText = title;
-	document.getElementById('modalPrice').innerText = price;
+  document.getElementById("modalTitle").innerText = product.title;
+  document.getElementById("modalSpecs").innerHTML =
+    product.specs.map(s => `<p>${s}</p>`).join("");
 
-	// main image
-	const mainImg = document.getElementById('modalMainImg');
-	mainImg.src = images[0];
+  // thumbnails (400px)
+  thumbs.innerHTML = "";
+  product.images.forEach((src, i) => {
+    const img = document.createElement("img");
+    img.src = toThumb(src);
+    if (i === 0) img.classList.add("active");
 
-	// thumbnails
-	const thumbs = document.getElementById('modalThumbs');
-	thumbs.innerHTML = '';
-	images.forEach((src, i) => {
-		const img = document.createElement('img');
-		img.src = src;
-		if(i===0) img.classList.add('active');
-		img.onclick = () => changeImage(mainImg,img);
-		thumbs.appendChild(img);
-	});
+    img.onclick = () => {
+      mainImg.src = src;
+      document.querySelectorAll("#modalThumbs img")
+        .forEach(t => t.classList.remove("active"));
+      img.classList.add("active");
+    };
 
-	// warna
-	const colorWrapper = document.querySelector('.product-colors');
-	colorWrapper.innerHTML = ''; // bersihkan dulu
-	colors.forEach(c=>{
-		const [cls, name] = c.split(':');
-		const div = document.createElement('div');
-		div.className = `color-sample ${cls}`;
-		div.title = name;
-		const span = document.createElement('span');
-		span.innerText = name;
-		colorWrapper.appendChild(div);
-		colorWrapper.appendChild(span);
-	});
+    thumbs.appendChild(img);
+  });
 
-	// WA link
-	document.getElementById('modalWA').href = 
-		`https://wa.me/628532671311?text=Halo saya tertarik dengan produk ${title}`;
+  // colors
+  const colors = document.getElementById("modalColors");
+  colors.innerHTML = "";
+  product.colors.forEach(c => {
+    colors.innerHTML += `
+      <div class="color-sample ${c.cls}"></div>
+      <span>${c.name}</span>
+    `;
+  });
 
-	// buka modal
-	document.getElementById('productModal').style.display = 'block';
-	document.body.style.overflow = 'hidden';
+  document.getElementById("modalWA").href =
+    `https://wa.me/628532671311?text=Halo saya tertarik dengan ${product.title}`;
+
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 
-
-
-function closeModal(id){
-	document.getElementById(id).style.display = 'none';
-	document.body.style.overflow = '';
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+  document.body.style.overflow = "";
 }
 
-function changeImage(mainImg, thumb){
-	mainImg.classList.add('fade-out');
-
-	setTimeout(()=>{
-		mainImg.src = thumb.src;
-		mainImg.classList.remove('fade-out');
-
-		document.querySelectorAll('#modalThumbs img')
-			.forEach(t => t.classList.remove('active'));
-		thumb.classList.add('active');
-	},300);
-}
-
-
-
-
-function openModal(id){
-	const modal = document.getElementById(id);
-	modal.style.display = 'block';
-	document.body.style.overflow = 'hidden'; // disable scroll background
-}
-
-function closeModal(id){
-	const modal = document.getElementById(id);
-	modal.style.display = 'none';
-	document.body.style.overflow = ''; // enable scroll lagi
-}
-
-function changeImage(mainImg, thumb){
-	if(!mainImg || !thumb) return;
-
-	// fade out
-	mainImg.classList.add('fade-out');
-
-	setTimeout(()=>{
-		mainImg.src = thumb.src;
-
-		// fade in
-		mainImg.classList.remove('fade-out');
-
-		// active thumbnail
-		document
-			.querySelectorAll('#modalThumbs img')
-			.forEach(t => t.classList.remove('active'));
-
-		thumb.classList.add('active');
-	}, 250);
-}
-
-
-
-// function changeImage(mainId, thumb){
-//   const img = document.getElementById(mainId);
-
-//   // fade out
-//   img.classList.add('fade-out');
-
-//   setTimeout(() => {
-//     // ganti gambar
-//     img.src = thumb.src;
-
-//     // fade in
-//     img.classList.remove('fade-out');
-
-//     // update thumbnail aktif
-//     document.querySelectorAll('.thumbnails img').forEach(t => t.classList.remove('active'));
-//     thumb.classList.add('active');
-
-//     // update dot
-//     const index = thumb.dataset.index;
-//     document.querySelectorAll('.dots .dot').forEach(d => d.classList.remove('active'));
-//     document.querySelectorAll('.dots .dot')[index].classList.add('active');
-//   }, 350);
-// }
-
-
-let startX = 0;
-let endX = 0;
-
-const wrapper = document.querySelector('.main-img-wrapper');
-wrapper.addEventListener('touchstart', e => {
-	startX = e.touches[0].clientX;
+/* ===============================
+   GLOBAL CLOSE
+================================ */
+window.addEventListener("click", e => {
+  const modal = document.getElementById("productModal");
+  if (e.target === modal) closeModal("productModal");
 });
 
-wrapper.addEventListener('touchmove', e => {
-	endX = e.touches[0].clientX;
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeModal("productModal");
 });
 
-wrapper.addEventListener('touchend', e => {
-	const diff = endX - startX;
-	if(Math.abs(diff) > 50){ // threshold 50px
-		if(diff < 0){
-			// swipe kiri → next image
-			const nextThumb = wrapper.parentElement.querySelector('.thumbnails img.active')?.nextElementSibling;
-			if(nextThumb) changeImage('mainImg1', nextThumb);
-		} else {
-			// swipe kanan → prev image
-			const prevThumb = wrapper.parentElement.querySelector('.thumbnails img.active')?.previousElementSibling;
-			if(prevThumb) changeImage('mainImg1', prevThumb);
-		}
-	}
-});
+/* ===============================
+   GRID HOVER IMAGE ROTATION
+   (SAFE - USING PRODUCTS)
+================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const INTERVAL = 900;
 
+  PRODUCTS.forEach(product => {
+    const card = document.querySelector(
+      `.product h3:nth-child(2)`
+    );
 
-window.onclick=function(e){
-	document.querySelectorAll('.modal').forEach(m=>{
-		if(e.target===m)m.style.display='none'
-	})
-}
+    // cari card berdasarkan title (aman & simpel)
+    const productCards = Array.from(document.querySelectorAll(".product"));
+    const cardEl = productCards.find(
+      c => c.querySelector("h3")?.innerText === product.title
+    );
+    if (!cardEl) return;
 
-document.addEventListener('keydown', function(e){
-	if(e.key === 'Escape'){
-		document.querySelectorAll('.modal').forEach(modal=>{
-			if(modal.style.display === 'block'){
-				modal.style.display = 'none';
-				document.body.style.overflow = ''; // aktifkan scroll lagi
-			}
-		});
-	}
-});
+    const img = cardEl.querySelector(".product-image img.top");
+    if (!img || product.images.length < 2) return;
 
-document.addEventListener('contextmenu', function(e){
-		if(e.target.tagName === 'IMG'){ 
-				e.preventDefault();
-		}
+    const thumbs = product.images.map(toThumb);
+    let index = 0;
+    let timer = null;
+
+    const start = () => {
+      if (timer) return;
+      timer = setInterval(() => {
+        index = (index + 1) % thumbs.length;
+        img.src = thumbs[index];
+      }, INTERVAL);
+    };
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+      index = 0;
+      img.src = thumbs[0];
+    };
+
+    cardEl.addEventListener("mouseenter", start);
+    cardEl.addEventListener("mouseleave", stop);
+
+    // mobile support
+    cardEl.addEventListener("touchstart", start);
+    cardEl.addEventListener("touchend", stop);
+  });
 });
 
 
 </script>
+
+
 
 </body>
 </html>
