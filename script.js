@@ -349,7 +349,8 @@ const PRODUCTS = [
     price: "IDR 1.450.000",
     images: [
       "img/treatment-padel-chair-1.jpg",
-      "img/treatment-padel-chair-2.jpg"
+      "img/treatment-padel-chair-2.jpg",
+      "img/treatment-padel-chair-3.jpg",
     ],
     specs: [
       "Material: Solid Teak Wood, Fabric",
