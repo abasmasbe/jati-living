@@ -397,21 +397,40 @@ const PRODUCTS = [
   },
 
   {
-    id: "zwart-cabinet-rattan",
-    title: "Zwart Cabinet Rattan",
-    category: "cabinet",
-    price: "IDR 4.400.000",
-    images: [
-      "img/zwart-cabinet-rattan-1.jpg",
-      "img/zwart-cabinet-rattan-2.jpg",
-      "img/zwart-cabinet-rattan-3.jpg"
-    ],
-    specs: [
-      "Material: Solid Teak Wood, Rattan",
-      "Size: W 150 x D 40 x H 65 cm"
-    ],
-    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
-  }
+  id: "zwart-cabinet-rattan",
+  title: "Zwart Cabinet Rattan",
+  category: "cabinet",
+  price: "IDR 4.400.000",
+  images: [
+    "img/zwart-cabinet-rattan-1.jpg",
+    "img/zwart-cabinet-rattan-2.jpg",
+    "img/zwart-cabinet-rattan-3.jpg"
+  ],
+  specs: [
+    "Material: Solid Teak Wood, Rattan",
+    "Size: W 150 x D 40 x H 65 cm",
+    "Pre Order"
+  ],
+  colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+},
+
+{
+  id: "wabize-sofa",
+  title: "Wabize Sofa",
+  category: "sofa",
+  price: "IDR 9.600.000",
+  images: [
+    "img/wabize-sofa-1.jpg",
+    "img/wabize-sofa-2.jpg"
+  ],
+  specs: [
+    "Material: Teak Wood, Fabric",
+    "Size: W 300 x D 80 x H 90 cm",
+    "Pre Order"
+  ],
+  colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+},
+
 
 
 ];

@@ -26,7 +26,8 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
-  padding: 100px 20px;
+  padding: 70px 20px;
+  padding-bottom: 170px;
   text-align: center;
   position: relative;
   transition: background-image 0.5s ease-in-out;
@@ -44,18 +45,25 @@ header h1,
 header p {
   position: relative;
   z-index: 1;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'DM Sans', sans-serif;
+  /* font-family: 'Manrope', sans-serif; */
   animation: fadeInUp 1s forwards;
   opacity: 0;
 }
 
 header h1 {
-  font-size: clamp(2.5rem, 5vw, 3rem);
+	font-size: clamp(2.5rem, 5vw, 3rem);
+	font-weight: 500;
 }
 
 header p {
+	font-family: 'Playfair Display', serif;
   font-size: clamp(0.9rem, 2vw, 1.2rem);
   margin-top: 5px;
+  /* font-weight: 200; */
 }
 
 @keyframes fadeInUp {
@@ -498,6 +506,8 @@ header p {
 }
 
 .kontak-info a {
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 0.9rem;
   color: #8b5e3c;
   font-weight: 500;
 }
@@ -505,6 +515,18 @@ header p {
 /* ===============================
    IG CARD
 ================================ */
+.ig-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ig-icon {
+  width: 16px;
+  height: 16px;
+}
+
+
 .ig-card {
   flex: 0 0 260px;
   background: #fafafa;
@@ -621,11 +643,26 @@ header p {
   .product-info p { font-size: 0.65em; }
   .product-colors span { font-size: 0.65em; }
   .color-sample { width: 15px; height: 15px; }
-  header { padding: 65px 15px; }
+  header { 
+	
+	padding: 65px 15px; 
+	padding-top: 10px;
+}
   .product h3 { font-size: 0.85rem; }
   .product .price { font-size: 0.55rem; }
   .products { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; padding: 0; }
   .product { flex: 0 0 45%; margin: 5px; }
-  .kontak-kami { padding-top: 20px; padding-left: 20px; padding-bottom: 20px; margin-top: 20px; }
-  .kontak-kami p { font-size: 0.6em; }
+  /* .kontak-kami { 
+	font-size: .7px;
+	padding-top: 20px; padding-left: 20px; padding-bottom: 20px; margin-top: 20px; }
+  .kontak-kami p { font-size: 0.3px; } */
+  .kontak-info h3 {
+	font-size: 1.2rem;
+  }
+  .kontak-info p {
+  font-size: 0.7rem;
+  }
+  .kontak-info a {
+	font-size: .7rem;
+  }
 }
