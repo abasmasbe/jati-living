@@ -23,10 +23,10 @@ const PRODUCTS = [
       "img/alder-cabinet-2.jpg"
     ],
     specs: [
-		"Material: Solid Teak Wood, Rattan, Hardware Slowmotion",
+		"Material: Solid Teak Wood, Rattan",
+		"Hardware: Slowmotion",
       "Size: W 220 x D 55 x H 85 cm",
       "Pre Order",
-    //   "Note: Optional Color"
     ],
     colors: [{ cls: "optional-colour", name: "Optional Colour" }]
   },
@@ -42,10 +42,9 @@ const PRODUCTS = [
       "img/loiss-sofa-3.jpg"
     ],
     specs: [
-		"Material: Solid Teak Wood, Fabric",
+	  	"Material: Solid Teak Wood, Fabric",
       "Size: W 300 x D 79 x H 96 cm",
       "Pre Order",
-    //   "Note: Optional Color"
     ],
     colors: [{ cls: "optional-colour", name: "Optional Colour" }]
   },
@@ -60,7 +59,8 @@ const PRODUCTS = [
       "img/bed-frame-4drawer-2.jpg"
     ],
     specs: [
-		"Material: Solid Teak Wood, Rattan, Hardware Push Open",
+		"Material: Solid Teak Wood, Rattan",
+		"Hardware: Push Open",
       "Size: W 180 x D 200 cm",
       "Pre Order",
     //   "Note: Optional Color"
@@ -78,7 +78,8 @@ const PRODUCTS = [
       "img/kura-cabinet-2.jpg"
     ],
     specs: [
-		"Material: Solid Teak Wood, Rattan, Hardware Slowmotion",
+		"Material: Solid Teak Wood, Rattan",
+		"Hardware: Slowmotion",
       "Size: W 140 x D 45 x H 90 cm",
       "Pre Order",
     //   "Note: Optional Color"
@@ -97,7 +98,8 @@ const PRODUCTS = [
       "img/mini-cabinet-3.jpg"
     ],
     specs: [
-		"Material: Solid Teak Wood, Hardware Slowmotion",
+		"Material: Solid Teak Wood",
+    "Hardware Slowmotion",
       "Size: W 50 x D 40 x H 55 cm",
       "Pre Order",
     //   "Note: Optional Color"
@@ -284,7 +286,133 @@ const PRODUCTS = [
     //   "Note: Optional Color"
     ],
     colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+
+    {
+    id: "wishman-chair",
+    title: "Wishman Chair",
+    category: "chair",
+    price: "IDR 850.000",
+    images: [
+      "img/wishman-chair-1.jpg",
+      "img/wishman-chair-2.jpg"
+    ],
+    specs: [
+      "Material: Solid Teak Wood",
+      "Dimension: W 45 x H 95 cm",
+      "Pre Order"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+  {
+    id: "loly-cabinet",
+    title: "Loly Cabinet",
+    category: "cabinet",
+    price: "IDR 3.650.000",
+    images: [
+      "img/loly-cabinet-1.jpg",
+      "img/loly-cabinet-2.jpg"
+    ],
+    specs: [
+      "Material: Teak Wood, Rattan Square",
+      "Hardware: Slowmotion",
+      "Size: W 120 x D 45 x H 80 cm",
+      "Pre Order"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+  {
+    id: "vintage-padel-chair",
+    title: "Vintage Padel Chair",
+    category: "chair",
+    price: "IDR 1.450.000",
+    images: [
+      "img/vintage-padel-chair-1.jpg",
+      "img/vintage-padel-chair-2.jpg"
+    ],
+    specs: [
+      "Material: Solid Teak Wood, Fabric",
+      "Size: W 63 x D 53 x H 95 cm",
+      "Open Request Logo",
+      "Pre Order"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+  {
+    id: "treatment-padel-chair",
+    title: "Treatment Padel Chair",
+    category: "chair",
+    price: "IDR 1.450.000",
+    images: [
+      "img/treatment-padel-chair-1.jpg",
+      "img/treatment-padel-chair-2.jpg"
+    ],
+    specs: [
+      "Material: Solid Teak Wood, Fabric",
+      "Size: W 63 x D 53 x H 95 cm",
+      "Open Request Logo",
+      "Pre Order"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+  {
+    id: "peanut-set-dining-table",
+    title: "Peanut Set Dining Table",
+    category: "table",
+    price: "IDR 7.650.000",
+    images: [
+      "img/peanut-dining-table-1.jpg",
+      "img/peanut-dining-table-2.jpg"
+    ],
+    specs: [
+      "Material: Solid Teak Wood, Rattan, Fabric",
+      "Set: 6 chairs + Table",
+      "Table Size: W 200 x D 90 x H 75 cm",
+      "Pre Order"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+  {
+    id: "receptionist-table",
+    title: "Receptionist Table",
+    category: "table",
+    price: "IDR 10.700.000",
+    images: [
+      "img/receptionist-table-1.jpg",
+      "img/receptionist-table-2.jpg"
+    ],
+    specs: [
+      "Material: Solid Teak Wood",
+      "Hardware: Slowmotion",
+      "Size: W 150 x D 100 / D 40 x H 100 cm",
+      "Pre Order"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
+  },
+
+  {
+    id: "zwart-cabinet-rattan",
+    title: "Zwart Cabinet Rattan",
+    category: "cabinet",
+    price: "IDR 4.400.000",
+    images: [
+      "img/zwart-cabinet-rattan-1.jpg",
+      "img/zwart-cabinet-rattan-2.jpg",
+      "img/zwart-cabinet-rattan-3.jpg"
+    ],
+    specs: [
+      "Material: Solid Teak Wood, Rattan",
+      "Size: W 150 x D 40 x H 65 cm"
+    ],
+    colors: [{ cls: "optional-colour", name: "Optional Colour" }]
   }
+
 
 ];
 
@@ -471,4 +599,20 @@ window.addEventListener("click", e => {
 
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeModal("productModal");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+const header = document.getElementById("mainHeader");
+if (!header || !PRODUCTS.length) return;
+
+let index = 0;
+
+// set background awal
+header.style.backgroundImage = `url('${toThumb(PRODUCTS[0].images[0])}')`;
+
+setInterval(() => {
+  index = (index + 1) % PRODUCTS.length;
+  header.style.backgroundImage =
+    `url('${toThumb(PRODUCTS[index].images[0])}')`;
+}, 2000); // 2000 ms = 2 detik
 });

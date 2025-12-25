@@ -26,7 +26,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff5e6;
-  padding: 60px 20px;
+  padding: 100px 20px;
   text-align: center;
   position: relative;
   transition: background-image 0.5s ease-in-out;
@@ -97,7 +97,7 @@ header p {
   text-align: left;
   padding-top: 30px;
   padding-left: 50px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   color: #333;
   margin-top: 20px;
 }
@@ -459,6 +459,122 @@ header p {
   white-space: nowrap;
 }
 
+/* ===============================
+   KONTAK SECTION
+================================ */
+.kontak-section {
+  margin: 40px auto;
+  padding: 0 15px;
+  max-width: 1000px;
+}
+
+.kontak-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* INFO */
+.kontak-info {
+  /* flex: 1 1 300px; */
+  flex: 1;
+}
+
+.kontak-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.kontak-info p {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.kontak-info a {
+  color: #8b5e3c;
+  font-weight: 500;
+}
+
+/* ===============================
+   IG CARD
+================================ */
+.ig-card {
+  flex: 0 0 260px;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+
+.ig-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ig-header img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ig-header strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.ig-header span {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.ig-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.ig-stats div {
+  flex: 1;
+}
+
+.ig-stats strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.ig-stats span {
+  font-size: 0.7rem;
+  color: #777;
+}
+
+/* IG BUTTON */
+.ig-btn {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .kontak-box {
+    flex-direction: column;
+  }
+}
+
 /* COLOR EXAMPLES */
 .salak-bronze { background-color: #a0522d; }
 .natural { background-color: #deb887; }
@@ -483,13 +599,16 @@ header p {
 /* ===============================
    FOOTER
 ================================ */
-footer {
-  background: #8b5e3c;
-  color: #fff;
+
+/* Copyright bawah page */
+.copyright {
   text-align: center;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  color: #fff;
+  background: #5a3f2b;  /* lebih gelap dari footer utama */
 }
+
 
 /* ===============================
    MEDIA QUERY UNTUK HP ≤600px
@@ -501,7 +620,7 @@ footer {
   .product-info p { font-size: 0.65em; }
   .product-colors span { font-size: 0.65em; }
   .color-sample { width: 15px; height: 15px; }
-  header { padding: 30px 15px; }
+  header { padding: 65px 15px; }
   .product h3 { font-size: 0.85rem; }
   .product .price { font-size: 0.55rem; }
   .products { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; padding: 0; }
