@@ -575,7 +575,7 @@ function openProduct(id) {
   const wa = document.getElementById("modalWA");
   if (wa) {
     wa.href =
-      `https://wa.me/628532671311?text=Halo, saya tertarik dengan ${product.title}`;
+      `https://wa.me/6287764967645?text=Halo, Saya tertarik dengan ${product.title}`;
   }
 
   modal.style.display = "block";
