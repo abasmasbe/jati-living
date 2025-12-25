@@ -26,8 +26,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
-  /* color: #fff5e6; */
-  /* background: rgba(139, 94, 60, 0.75); */
   padding: 100px 20px;
   text-align: center;
   position: relative;
@@ -40,7 +38,6 @@ header::before {
   inset: 0;
   background: white;
   opacity: .4;
-  /* background: rgba(139, 94, 60, 0.75); */
 }
 
 header h1,
